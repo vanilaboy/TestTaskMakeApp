@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/actionBarTitle"
+        android:fontFamily="@font/roboto_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
