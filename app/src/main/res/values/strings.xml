@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Мои дела</string>
+
+    <string name="task_item_header_placeholder">Короткий заголовок</string>
+    <string name="task_item_body_placeholder">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более…</string>
+
+    <string name="task_detail_header_hint">Введите заголовок</string>
+    <string name="task_detail_body_hint">Введите текст</string>
+    <string name="task_detail_fab_description">Приоритет</string>
+    <string name="task_detail_button">Создать</string>
+
+    <string name="alert_dialog_message">Отметить дело как выполненное?</string>
+    <string name="alert_dialog_positive">Да</string>
+    <string name="alert_dialog_negative">Нет</string>
+</resources>
