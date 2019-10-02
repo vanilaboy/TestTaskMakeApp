@@ -11,6 +11,7 @@ public class Task {
     private UUID mId;
     private String mHeader;
     private String mBody;
+    private String mDate;
     private int mPriority = LOW_PRIOROTY;
 
     public Task() {
@@ -51,5 +52,13 @@ public class Task {
 
     public void setId(UUID id) {
         mId = id;
+    }
+
+    public String getDate() {
+        return mDate;
+    }
+
+    public void setDate(String date) {
+        mDate = date;
     }
 }

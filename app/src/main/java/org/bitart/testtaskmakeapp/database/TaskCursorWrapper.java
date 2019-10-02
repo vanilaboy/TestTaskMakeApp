@@ -20,6 +20,7 @@ public class TaskCursorWrapper extends CursorWrapper {
         result.setHeader(getString(getColumnIndex(TaskDBSchema.TaskTable.Columns.HEADER)));
         result.setBody(getString(getColumnIndex(TaskDBSchema.TaskTable.Columns.BODY)));
         result.setPriority(getInt(getColumnIndex(TaskDBSchema.TaskTable.Columns.PRIORITY)));
+        result.setDate(getString(getColumnIndex(TaskDBSchema.TaskTable.Columns.DATE)));
 
         return result;
     }

@@ -100,6 +100,7 @@ public class Singleton {
         values.put(TaskDBSchema.TaskTable.Columns.BODY, task.getBody());
         values.put(TaskDBSchema.TaskTable.Columns.PRIORITY, task.getPriority());
         values.put(TaskDBSchema.TaskTable.Columns.UUID, task.getId().toString());
+        values.put(TaskDBSchema.TaskTable.Columns.DATE, task.getDate());
 
         return values;
     }

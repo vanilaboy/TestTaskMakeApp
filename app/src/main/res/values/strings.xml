@@ -6,10 +6,15 @@
 
     <string name="task_detail_header_hint">Введите заголовок</string>
     <string name="task_detail_body_hint">Введите текст</string>
+    <string name="task_detail_date_hint">Введите дату дедлайна</string>
     <string name="task_detail_fab_description">Приоритет</string>
     <string name="task_detail_button">Создать</string>
 
     <string name="alert_dialog_message">Отметить дело как выполненное?</string>
     <string name="alert_dialog_positive">Да</string>
     <string name="alert_dialog_negative">Нет</string>
+
+    <string name="notification_header">Дедлайн!</string>
+    <string name="notification_body">Приближается дедлайн одной из Ваших задач</string>
+
 </resources>
