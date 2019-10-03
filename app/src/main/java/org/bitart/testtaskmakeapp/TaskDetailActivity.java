@@ -9,14 +9,12 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -38,7 +36,7 @@ public class TaskDetailActivity extends AppCompatActivity {
     private EditText mEditTextDate;
     private ImageButton mExitButton;
 
-    private int mProirity;
+    private int mPriority;
     private FloatingActionButton mFabLow;
     private FloatingActionButton mFabMedium;
     private FloatingActionButton mFabHigh;
@@ -78,7 +76,7 @@ public class TaskDetailActivity extends AppCompatActivity {
             }
 
             task.setBody(mEditTextBody.getText().toString());
-            task.setPriority(mProirity);
+            task.setPriority(mPriority);
             task.setDate(mEditTextDate.getText().toString());
             if(task.getDate().equals("")) {
                 mEditTextDate.callOnClick();
@@ -111,7 +109,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         for(int i = 0; i < mFabList.size(); i++) {
             FloatingActionButton fab = mFabList.get(i);
             fab.setOnClickListener(view -> {
-                mProirity = mFabList.indexOf(fab);
+                mPriority = mFabList.indexOf(fab);
                 for(FloatingActionButton localFab : mFabList) {
                     localFab.setImageResource(android.R.color.transparent);
                 }
@@ -177,7 +175,7 @@ public class TaskDetailActivity extends AppCompatActivity {
                 this,
                 0,
                 intent,
-                0
+                PendingIntent.FLAG_UPDATE_CURRENT
         );
         alarmManager.set(AlarmManager.RTC_WAKEUP,
                 mCalendar.getTimeInMillis() - 1000 * 60 * 60,

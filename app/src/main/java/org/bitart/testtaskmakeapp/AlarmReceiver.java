@@ -23,12 +23,12 @@ public class AlarmReceiver extends BroadcastReceiver {
         UUID id = (UUID) intent.getExtras().getSerializable(EXTRA_TASK_ID);
         Task task = Singleton.getInstance(context).getTask(id);
         if(task != null && checkDate(task.getDate())) {
-            sendNotification(context, id);
+            sendNotification(context, task);
         }
     }
 
-    public static void sendNotification(Context context, UUID id) {
-        Intent intent = TaskDetailActivity.newIntent(context, id);
+    public static void sendNotification(Context context, Task task) {
+        Intent intent = TaskDetailActivity.newIntent(context, task.getId());
         PendingIntent contentIntent = PendingIntent.getActivity(context,
                 0,
                 intent,
@@ -36,16 +36,18 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 
         Notification.Builder notification = new Notification.Builder(context);
-        notification.setAutoCancel(true);
         notification.setContentIntent(contentIntent)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle(context.getResources().getString(R.string.notification_header))
+                .setAutoCancel(true)
+                .setSmallIcon(R.drawable.ic_clear)
+//                .setContentTitle(context.getResources().getString(R.string.notification_header))
+                .setContentTitle(task.getHeader())
                 .setPriority(Notification.PRIORITY_LOW)
                 .setContentText(context.getResources().getString(R.string.notification_body));
 
 
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("133", "My channel_v1.3",
